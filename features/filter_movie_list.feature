@@ -30,4 +30,7 @@ Scenario: restrict to movies with "PG" or "R" ratings
   Then I should not see the following movies: The Help,Chocolat,2001: A Space Odyssey,Chicken Run,Aladdin
   
 Scenario: all ratings selected
-  # your steps here
+  And I check the following ratings: PG,R,PG-13,G
+  Then I press "Refresh"
+  Then I should see all the movies
+  

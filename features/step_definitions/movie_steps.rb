@@ -46,7 +46,10 @@ end
 
 Then /I should see all the movies/ do
   # Make sure that all the movies in the app are visible in the table
-  pending "Fill in this step in movie_steps.rb"
+  movies = Movie.all
+  movies.each do |movie| 
+    steps %Q{Then I should see "#{movie.title}"}
+  end
 end
 
 ### Utility Steps Just for this assignment.
@@ -62,7 +65,6 @@ Then /^debug javascript$/ do
   page.driver.debugger
   1
 end
-
 
 Then /complete the rest of of this scenario/ do
   # This shows you what a basic cucumber scenario looks like.

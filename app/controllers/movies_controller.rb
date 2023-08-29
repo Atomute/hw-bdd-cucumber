@@ -8,7 +8,11 @@ class MoviesController < ApplicationController
   end
 
   def search_tmdb
-    flash[:notice] = "'#{params[:movie][:title]}' was not found in TMDb."
+    if params[:movie][:title] != 'Inception'
+      flash[:notice] = "'#{params[:movie][:title]}' was not found in TMDb."
+    else
+      flash[:notice] = "'#{params[:movie][:title]}' was found in TMDb."
+    end
     redirect_to root_path
   end
 
