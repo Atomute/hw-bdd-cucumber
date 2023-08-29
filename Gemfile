@@ -40,8 +40,3 @@ group :test do
   gem 'capybara'         # lets Cucumber pretend to be a web browser
   gem 'launchy'          # a useful debugging aid for user stories
 end
-
-gem 'bigdecimal', '1.3.5'
-
-gem 'execjs'
-gem 'therubyracer', :platforms => :ruby
