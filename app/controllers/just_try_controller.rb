@@ -1,0 +1,2 @@
+class JustTryController < ApplicationController
+end
