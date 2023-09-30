@@ -1,6 +1,9 @@
 class Moviegoer < ActiveRecord::Base
   # Include default devise modules. Others available are:
+  
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  has_many :reviews
+  has_many :movies, :through => :reviews
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable
 
@@ -14,3 +17,6 @@ class Moviegoer < ActiveRecord::Base
     end
   end
 end
+
+
+

@@ -13,6 +13,7 @@ class MoviesController < ApplicationController
     @movie_name = params[:movie][:title]
     find_movie = Tmdb::Movie.find(@movie_name)
     if !find_movie.empty?
+      if Movie.find_by(name: @mo)
       movie = find_movie[0]
       @name = movie.title
       @date = movie.release_date
